@@ -1,0 +1,38 @@
+How to use git (based on https://www.codementor.io/git/tutorial/git-github-tutorial-for-beginners)
+
+1-Config
+
+	git config --global user.name "Your Name"
+	git config --global user.email your_email@email.com
+
+
+2-Create a repository
+
+	git init project_name		# in this case the the project_name directory will be created
+
+	#if the directory already exists, change to it and run the command
+
+	cd project_name
+	git init
+
+
+3-Create a project description file (README.md)
+
+	sudo vim README.md
+
+		edit the file....
+
+4-Add the file to the Staging Area
+	When you add new files to your project, git does not track them.
+	You have to add them to the staging area first using git add. The staging area stores information
+	and lets you control precisely what will go into your next commit.
+
+	git add README.md
+
+5-Commit the file
+
+	git commit -m "Initial message"
+
+
+
+
