@@ -1,0 +1,59 @@
+1-Create the project root directory (in apache root directory - /var/www/html/)
+
+	mkdir project-name
+	cd project-name
+
+	copy / clone the react-php-starter
+
+	cd react-php-starter
+	./setup-php-react-starter <project_name> <project_version>
+
+	=
+	=
+	=
+	=
+
+
+	mkdir project-name-v1.0
+	cd project-name-v1.0
+
+2-Create the root php file called index.php
+
+	# copy it from needed-files
+	cp needed-files/index.php .
+
+3-Setup the React App
+
+	# CREATE THE DIRECTORIES TREE
+	mkdir app
+	cd app
+
+	mkdir _devapp
+	mkdir _devapp/css
+	mkdir assets
+	mkdir assets/css
+
+	# COPY THE NEEDED FILES
+	cp ../needed-files/package.json		.
+	cp ../needed-files/webpack.config.js	.
+	cp ../needed-file/postcss.config.js	.
+	cp ../needed-files/app.js            	./_devapp
+	cp ../needed-files/Header.jsx		./_devapp
+	cp ../needed-files/app.scss		./_devapp/css/
+	cp ../needed-files/Header.scss		./_devapp/css/
+
+	# INSTALL DEPENDECIES
+
+	npm install --unsafe-perm
+
+4-Build the app
+
+	npm run-script build
+
+5-Access the project
+	localhost/project-name/project-name-v1.0
+
+	OR Setup Apache Vitual Host (optional)
+
+
+

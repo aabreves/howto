@@ -1,0 +1,23 @@
+1-create a custom-commands file:
+
+	sudo touch ~/.custom-commands
+
+2-open the custom-commands file and create an alias for each custom command you wish:
+
+	sudo vim ~/.custom-commands
+
+	to create the custom commands use the following syntax:
+
+		alias <custom-name>='<custom command>'
+
+	i.e.
+		alias lsa='ls -la'
+		alias clsa='clear; ls -la'	#or 'clear; lsa'
+
+		alias html='cd /var/www/html'
+
+3-update the changes:
+
+	source ~/.custom-commands
+
+	(insert this line on your ~/.bashrc)

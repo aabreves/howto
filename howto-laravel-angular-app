@@ -1,0 +1,67 @@
+1-Install the Laravel installer:
+
+	composer global require "laravel/installer=~1.1"
+
+2-Update the PATH variable:
+
+	vim ~/.bashrc
+
+		export PATH=$PATH:~/.composer/vendor/bin
+
+3-Create the new project:
+
+	cd /var/www/html				Ex.
+	laravel new <project_name>			laravel new todo # create a project called todo
+	cd <project_name>				cd todo
+	composer update
+
+4-Create the new project database:
+
+	create an empty database on MySql;
+	setup the database access on .env file;
+
+5-Setup and create the database table(s):
+
+	For each table:
+		php artisan make:migration create_<tablename>_table
+
+		this command will create a file called <timestamp>_create<tablename>_table.php on
+		database/migrations directory
+
+		Ex.
+		php artisan make:migration create_todo_table
+
+
+		Edit the created file to setup de table's fields:
+
+			public function up()
+			{
+				 Schema::create(‘tbl_todo_list’, function (Blueprint $table) {
+				 	$table->increments(‘id’);
+				 	$table->string(‘s_todo_name’);
+				 	$table->boolean(‘b_is_done’);
+				 	$table->integer(‘i_order_num’);
+				 	$table->timestamps();
+				 });
+			}
+
+	php artisan migrate
+
+6-Create a model for each table:
+
+	php artisan make:model TodoModel
+	# this will create a "TodoModel.php" file on "app/"
+
+
+7-Create a controller for each table:
+
+	php artisan make:controller TodoController
+	# this will create a "TodoController.php" file on "app/Http/Controllers/"
+
+
+
+
+
+
+
+ 

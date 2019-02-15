@@ -1,0 +1,47 @@
+
+sudo docker search <pattern>
+
+	Search for docker images
+
+
+sudo docker pull <image_name>
+
+	Download a docker image
+
+
+sudo docker run <image_name>
+
+	Start the docker container
+
+sudo docker run -i -t <image_name> /bin/bash
+
+	The -i flag makes the container interactive by grabbing the standard input ( STDIN ) of the container.
+	The -t flag allocates a pseudo-TTY or a pseudo terminal (terminal emulator) and then assigns that to the container.
+
+sudo docker run -it -p8080:80 --name <container_name> -v "$PWD":/var/www/html <image_name> /bin/bash
+
+	-p8080:80 binds the host 8080 port to container 80 port
+	--name <container_name> set a name to the running container
+	-v <host path>:<container mount path> - shares host data with the container
+
+ctrl+p + ctrl+q
+
+	Detach the container from tty
+
+sudo docker attach <name>
+
+	Attach the container
+
+sudo docker ps
+
+	List all running containers
+
+
+sudo docker stop <container_id>
+
+	Stop the <container_id> container
+
+
+sudo docker images
+	
+	List downloaded images

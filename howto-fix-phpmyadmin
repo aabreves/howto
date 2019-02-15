@@ -1,0 +1,23 @@
+Warning in ./libraries/sql.lib.php#601
+count(): Parameter must be an array or an object that implements Countable
+
+Backtrace......
+
+
+(https://stackoverflow.com/questions/48001569/phpmyadmin-count-parameter-must-be-an-array-or-an-object-that-implements-co)
+
+
+Manual Method:
+
+Open sql.lib.php file
+
+nano /usr/share/phpmyadmin/libraries/sql.lib.php
+
+Find for count($analyzed_sql_results['select_expr'] code on file. You can get this at line ~613. You can see this below wrong code
+
+|| (count($analyzed_sql_results['select_expr'] == 1)
+
+Just replace that wrong code with this below one
+
+|| ((count($analyzed_sql_results['select_expr']) == 1)
+
