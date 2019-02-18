@@ -1,0 +1,33 @@
+HOW TO CREATE A NEW PROJECT FROM SCRATCH
+
+create a new project called "pathfinder"
+
+1-Start it with git init
+
+		git init pathfinder
+
+	# this command will create the pathfinder directory and repository.
+	# the created directory is not intended to be the real project directory; instead it
+	#	is a root directory to all versions of this project
+
+2-Next
+
+		cd pathfinder
+		git init pathfinder-v1.0		# note the version tag
+
+	# this command will create the real project directory and also a repository to it.
+
+	# if in the future we create a new pathfinder version...
+
+		git init pathfinder-v2.0                # note the version tag
+
+	# this will give us the following directory tree:
+
+___________pathfinder/
+		/
+		\___pathfinder-v1.0/
+		/
+		\___pathfinder-v2.0/
+
+
+

@@ -1,0 +1,23 @@
+-Install
+	apt-get install php-xdebug
+
+
+-Edit php.ini - setup xdebug to netbeans
+
+[XDebug]
+zend_extension=/usr/lib/php/20170718/xdebug.so # the xdebug.so location
+xdebug.idekey=netbeans-xdebug
+xdebug.remote_enable=1
+xdebug.remote_autostart=1
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9001
+xdebug.remote_handler=dbgp
+xdebug.profiler_enable=1
+
+
+-Restart apache
+	service apache2 restart
+OR
+	systemctl reload apache2
+
+

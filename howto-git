@@ -8,7 +8,7 @@ How to use git (based on https://www.codementor.io/git/tutorial/git-github-tutor
 
 2-Create a repository
 
-	git init project_name		# in this case the the project_name directory will be created
+	git init project_name		# in this case the project_name directory will be created
 
 	#if the directory already exists, change to it and run the command
 
