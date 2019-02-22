@@ -1,47 +1,58 @@
+DOCKER USAGE:
 
+1)
 sudo docker search <pattern>
+#	Search for docker images
 
-	Search for docker images
-
-
+2)
 sudo docker pull <image_name>
+#	Download a docker image
 
-	Download a docker image
-
-
+3)
 sudo docker run <image_name>
-
-	Start the docker container
+#	Start the docker container
 
 sudo docker run -i -t <image_name> /bin/bash
-
-	The -i flag makes the container interactive by grabbing the standard input ( STDIN ) of the container.
-	The -t flag allocates a pseudo-TTY or a pseudo terminal (terminal emulator) and then assigns that to the container.
+#	-i -makes the container interactive by grabbing the standard input ( STDIN ) of the container.
+#	-t -allocates a pseudo-TTY or a pseudo terminal (terminal emulator) and then assigns that to the container.
 
 sudo docker run -it -p8080:80 --name <container_name> -v "$PWD":/var/www/html <image_name> /bin/bash
+#	-it -same as -i -t
+#	-p8080:80 -binds the host 8080 port to container 80 port
+#	--name <container_name> -set a name to the running container
+#	-v <host path>:<container mount path> -shares host data with the container
 
-	-p8080:80 binds the host 8080 port to container 80 port
-	--name <container_name> set a name to the running container
-	-v <host path>:<container mount path> - shares host data with the container
+sudo docker run -dit -p8080:80 --restart unless-stopped --name <container_name> -v <host path>:<container mount path> <image_name> /bin/bash
+#	-d -detach mode (or daemon mode)
+#	--restart unless-stopped -tells docker to restart this container
 
+
+4)
 ctrl+p + ctrl+q
+#	Detach the container from tty
 
-	Detach the container from tty
-
+5)
 sudo docker attach <name>
+#	Attach the container
 
-	Attach the container
-
+6)
 sudo docker ps
+#	List all running containers
 
-	List all running containers
-
-
+7)
 sudo docker stop <container_id>
+#	OR
+sudo docker kill <container_id>
+#	Stop the <container_id> container
 
-	Stop the <container_id> container
+8)
+sudo docker container prune
+#	Remove all stopped containers
 
+9)
+sudo docker images	
+#	List downloaded images
 
-sudo docker images
-	
-	List downloaded images
+10)
+sudo docker commit <container_id> <new_name>
+#	Create a new image from a container’s changes

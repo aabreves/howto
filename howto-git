@@ -34,5 +34,12 @@ How to use git (based on https://www.codementor.io/git/tutorial/git-github-tutor
 	git commit -m "Initial message"
 
 
+6-Create new branch
+
+	git checkout -b [name_of_your_new_branch]
+
+7-Ser a remote repository
+
+	git remote add <remote_name> <remote_urk>
 
 

@@ -1,0 +1,93 @@
+# install docker
+
+	https://www.tutorialspoint.com/docker/docker_tutorial.pdf
+
+# get the docker image
+sudo docker search ubuntu
+
+sudo docker pull ubuntu
+
+# run the container
+sudo docker run -dit -p8080:80 --name ubuntu-dev -v <host-working-directory>:/var/www/html ubuntu /bin/bash
+
+sudo docker ps
+
+sudo docker attach ubuntu-dev
+
+cat /etc/os-release
+
+apt update
+
+apt upgrade
+
+apt install apache2
+
+service apache2 start
+
+apt install php7.2
+
+service apache2 restart
+
+# intall tools
+apt install vim git wget curl iproute2
+
+# install and configure php-xdebug
+	apt install php-xdebug 
+	vim /etc/php/7.2/apache2/
+
+		[XDebug]
+		zend_extension=/usr/lib/php/20170718/xdebug.so
+		xdebug.idekey=netbeans-xdebug
+		xdebug.remote_enable=1
+		xdebug.remote_autostart=1
+		xdebug.remote_host=127.0.0.1
+		xdebug.remote_port=9001
+		xdebug.remote_handler=dbgp
+		xdebug.profiler_enable=1
+
+# install Node.js
+cd /tmp
+
+# copy the download link from https://nodejs.org/en/
+
+	wget https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz
+
+# from https://github.com/nodejs/help/wiki/Installation
+
+	VERSION=v10.15.1
+	DISTRO=linux-x64
+	mkdir -p /usr/local/lib/nodejs
+	tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs
+
+# edit /etc/profile
+
+	vim /etc/profile
+
+		# Node.js
+		VERSION=v10.15.1
+		DISTRO=linux-x64
+		export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+# reload /etc/profile
+
+	source /etc/profile
+
+# test the installation
+
+	node -v
+	npm -v
+	npm version
+	npx -v
+
+# install yarn
+
+	npm install -g yarn
+
+# on <host-working-directory>
+
+	git clone <repository> <project_name>
+
+# on container /var/www/html
+
+	cd project_name
+	./workspace_install

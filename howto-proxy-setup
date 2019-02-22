@@ -1,0 +1,24 @@
+proxy-name	<proxy_ip>:<proxy_port>		<proxy_url>		(verify with ping proxy-name)
+
+
+edit /etc/profile	OR	/home/<user>/.profile	OR	both
+
+export http_proxy=http://<user_name>:<user_pass>@<proxy_ip>:<proxy_port>
+export https_proxy=http://<user_name>:<user_pass>@<proxy_ip>:<proxy_port>
+export ftp_proxy=http://<user_name>:<user_pass>@<proxy_ip>:<proxy_port>
+export all_proxy=socks://<user_name>:<user_pass>@<proxy_ip>:<proxy_port>
+
+cntlm
+
+/etc/cntlm.conf
+127.0.0.1:3128
+
+yarn
+
+yarn --proxy http://<proxy_ip>:<proxy_port> --https-proxy http://<proxy_ip>:<proxy_port>
+
+
+node/npm
+
+sudo npm config set proxy http://<proxy_ip>:<proxy_port>
+sudo npm config set https-proxy http://<proxy_ip>:<proxy_port>
